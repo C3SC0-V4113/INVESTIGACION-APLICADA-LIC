@@ -2,9 +2,10 @@ body {
   background: 0 -100px repeat-x url(https://mdn.mozillademos.org/files/5415/bg_gallery.png) #4F191A;
   margin: 10px;
 }
-
 img {
-  display: none;
+  height: 200px;
+  width: 200px;
+  object-fit: cover;
 }
 
 table {
