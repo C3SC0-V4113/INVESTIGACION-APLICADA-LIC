@@ -20,3 +20,9 @@ h1{
   text-align:center;
   color: lightgoldenrodyellow;
 }
+
+p{
+  color: lightgoldenrodyellow;
+  text-align: justify;
+  text-shadow: 1.8px 1.8px 1.8px black;
+}
