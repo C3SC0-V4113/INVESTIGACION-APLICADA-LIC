@@ -18,10 +18,11 @@ function animate() {
   c.arc(x,y,radius,0,Math.PI*2,false);
   c.strokeStyle = "blue";
   c.stroke();
+  c.fill();
   if (x+radius>innerWidth || x-radius<0) {
     dx=-dx;
   }
-  if (y+radius>innerWidth || y-radius<0) {
+  if (y+radius>innerHeight || y-radius<0) {
     dy=-dy;
   }
   x+=dx;
