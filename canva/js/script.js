@@ -1,26 +1,30 @@
-function draw() {
+console.log("Hola Mundo");
+  var lienzo=document.getElementById("canvas1");
+  console.log(lienzo);
+  lienzo.width=window.innerWidth;
+  lienzo.height=window.innerHeight;
+  var c=lienzo.getContext('2d');
+  console.log(c);
 
-  // Loop through all images
-  for (var i = 0; i < document.images.length; i++) {
-
-    // Don't add a canvas for the frame image
-    if (document.images[i].getAttribute('id') != 'frame') {
-
-      // Create canvas element
-      canvas = document.createElement('canvas');
-      canvas.setAttribute('width', 132);
-      canvas.setAttribute('height', 150);
-
-      // Insert before the image
-      document.images[i].parentNode.insertBefore(canvas,document.images[i]);
-
-      ctx = canvas.getContext('2d');
-
-      // Draw image to canvas
-      ctx.drawImage(document.images[i], 15, 20);
-
-      // Add frame
-      ctx.drawImage(document.getElementById('frame'), 0, 0);
-    }
+var x=Math.random()*innerWidth;
+var y=Math.random()*innerHeight;
+var dx=4;
+var dy=4;
+var radius=30;
+function animate() {
+  requestAnimationFrame(animate);
+  c.clearRect(0,0,innerWidth,innerHeight);
+  c.beginPath();
+  c.arc(x,y,radius,0,Math.PI*2,false);
+  c.strokeStyle = "blue";
+  c.stroke();
+  if (x+radius>innerWidth || x-radius<0) {
+    dx=-dx;
   }
+  if (y+radius>innerWidth || y-radius<0) {
+    dy=-dy;
+  }
+  x+=dx;
+  y+=dy;
 }
+animate();
